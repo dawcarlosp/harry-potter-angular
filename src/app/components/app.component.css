@@ -1,31 +1,26 @@
 :host {
   display: block;
   min-height: 100vh;
-  background-color: #f4f4f4;
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 /* CABECERA */
-
 .cabecera {
-  background: linear-gradient(to right, #740001, #d3a625);
+  background: linear-gradient(135deg, #740001, #d3a625);
   color: white;
   text-align: center;
-  padding: 30px 20px;
+  padding: 40px 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .cabecera h1 {
   margin: 0;
-  font-size: 38px;
-}
-
-.cabecera p {
-  margin-top: 10px;
-  font-size: 18px;
+  font-size: 40px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* MENSAJES */
-
 .mensaje {
   text-align: center;
   margin-top: 30px;
@@ -33,82 +28,157 @@
 }
 
 .error {
-  color: red;
+  color: #dc3545;
 }
 
 /* CONTENEDOR */
-
 .contenedor {
   width: 90%;
-  margin: 30px auto;
-
+  max-width: 1400px;
+  margin: 40px auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 25px;
+  gap: 30px;
 }
 
-/* TARJETAS */
-
+/* TARJETAS GENERALES */
 .card {
   width: 260px;
   background-color: white;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
-
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-
-  transition: transform 0.2s;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.05),
+    0 1px 3px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-bottom: 5px solid #ddd;
 }
 
+/* EFECTOS HOVER GENERALES */
 .card:hover {
-  transform: scale(1.03);
+  transform: translateY(-8px);
 }
 
 /* IMAGEN */
-
 .imagen {
   width: 100%;
   height: 320px;
   object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .imagen {
+  transform: scale(1.02);
 }
 
 .sin-imagen {
   width: 100%;
   height: 320px;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
-  background-color: #ddd;
-  color: gray;
+  background-color: #e9ecef;
+  color: #6c757d;
+  font-weight: bold;
 }
 
 /* INFORMACIÓN */
-
 .info {
-  padding: 15px;
+  padding: 20px;
 }
 
 .info h2 {
   margin-top: 0;
-  color: #740001;
+  margin-bottom: 12px;
   font-size: 22px;
+  transition: color 0.3s ease;
 }
 
 .info p {
-  margin: 8px 0;
+  margin: 10px 0;
+  font-size: 14px;
+  color: #495057;
 }
 
 /* ESTADO */
-
 .vivo {
-  color: green;
+  color: #28a745;
   font-weight: bold;
 }
 
 .fallecido {
-  color: red;
+  color: #dc3545;
   font-weight: bold;
+}
+
+/* ==========================================
+   ESTILOS DINÁMICOS POR CASA (HOVER Y SOMBRAS)
+   ========================================== */
+
+/* Gryffindor */
+.card.gryffindor {
+  border-bottom: 5px solid #740001;
+}
+.card.gryffindor .info h2 {
+  color: #740001;
+}
+.card.gryffindor:hover {
+  box-shadow:
+    0 14px 28px rgba(116, 0, 1, 0.25),
+    0 10px 10px rgba(211, 166, 37, 0.22);
+}
+
+/* Slytherin */
+.card.slytherin {
+  border-bottom: 5px solid #1a472a;
+}
+.card.slytherin .info h2 {
+  color: #1a472a;
+}
+.card.slytherin:hover {
+  box-shadow:
+    0 14px 28px rgba(26, 71, 42, 0.25),
+    0 10px 10px rgba(170, 170, 170, 0.22);
+}
+
+/* Ravenclaw */
+.card.ravenclaw {
+  border-bottom: 5px solid #0e1a40;
+}
+.card.ravenclaw .info h2 {
+  color: #0e1a40;
+}
+.card.ravenclaw:hover {
+  box-shadow:
+    0 14px 28px rgba(14, 26, 64, 0.25),
+    0 10px 10px rgba(148, 107, 45, 0.22);
+}
+
+/* Hufflepuff */
+.card.hufflepuff {
+  border-bottom: 5px solid #ecb939;
+}
+.card.hufflepuff .info h2 {
+  color: #f0c75e;
+}
+.card.hufflepuff:hover {
+  box-shadow:
+    0 14px 28px rgba(236, 185, 57, 0.3),
+    0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Sin Casa / Desconocida */
+.card.desconocida {
+  border-bottom: 5px solid #6c757d;
+}
+.card.desconocida .info h2 {
+  color: #6c757d;
+}
+.card.desconocida:hover {
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.15),
+    0 10px 10px rgba(0, 0, 0, 0.1);
 }

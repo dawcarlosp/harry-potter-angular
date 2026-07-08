@@ -14,7 +14,8 @@
   } @else {
     <div class="contenedor">
       @for (personaje of characters(); track $index) {
-        <div class="card">
+        <!-- Añadida clase dinámica según la casa -->
+        <div class="card" [class]="personaje.house ? (personaje.house | lowercase) : 'desconocida'">
           @if (personaje.image) {
             <img class="imagen" [src]="personaje.image" [alt]="personaje.name" />
           } @else {
@@ -36,7 +37,6 @@
 
             <p [class.vivo]="personaje.alive" [class.fallecido]="!personaje.alive">
               <strong>Estado:</strong>
-
               {{ personaje.alive ? 'Vivo' : 'Fallecido' }}
             </p>
           </div>

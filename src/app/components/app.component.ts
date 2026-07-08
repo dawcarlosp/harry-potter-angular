@@ -1,12 +1,14 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { CharacterService } from '../services/Character.service';
 import { Character } from '../models/Character.model';
+import { LowerCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
+  imports: [LowerCasePipe],
 })
 export class AppComponent implements OnInit {
   characters = signal<Character[]>([]);
