@@ -23,7 +23,7 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build -- -- configuration production --base-href /harry-potter-angular/
+      - run: npm run build -- --configuration=production --base-href=/harry-potter-angular/
 
       - uses: actions/upload-pages-artifact@v3
         with:
