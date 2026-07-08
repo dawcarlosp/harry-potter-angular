@@ -1,24 +1,77 @@
-# Compiled output & Node
-/dist
-/tmp
-/out-tsc
-/node_modules
-*.log
-
-# IDEs & VS Code
-.idea/
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
-
-# Angular & Misc
-/.angular/cache
-/coverage
+# ==============================================================================
+# SISTEMA OPERATIVO & IDEs
+# ==============================================================================
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
 
-# End-to-end (E2E)
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+
+# VS Code (Ignora la carpeta por completo)
+.vscode/
+.history/
+*.code-workspace
+
+# JetBrains (WebStorm, PhpStorm, IntelliJ, etc.)
+.idea/
+
+# ==============================================================================
+# DEPENDENCIAS & COMPILACIÓN (Node.js, Angular, React)
+# ==============================================================================
+# Dependencias
+node_modules/
+jspm_packages/
+.pnpm-store/
+
+# Carpetas de salida y producción
+/dist/
+/tmp/
+/out-tsc/
+/bazel-out/
+/.angular/
+
+# Caché de herramientas
+.npm/
+.eslintcache
+.stylelintcache
+.prettiercache
+.parcel-cache/
+.turbo/
+.next/
+.nuxt/
+
+# ==============================================================================
+# PRUEBAS & REPORTES
+# ==============================================================================
+/coverage/
+/.nyc_output/
 /e2e/*.js
 /e2e/*.map
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ==============================================================================
+# SEGURIDAD (Archivos locales y credenciales)
+# ==============================================================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
