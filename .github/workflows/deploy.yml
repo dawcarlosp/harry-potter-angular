@@ -25,7 +25,7 @@ jobs:
 
       - run: npm run build -- --configuration=production --base-href=/harry-potter-angular/
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: dist/harry-potter-angular/browser
 
@@ -42,4 +42,4 @@ jobs:
       id-token: write
 
     steps:
-      - uses: actions/deploy-pages@v4
+      - uses: actions/deploy-pages@v5
